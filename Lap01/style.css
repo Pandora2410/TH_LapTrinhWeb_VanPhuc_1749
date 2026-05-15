@@ -254,3 +254,37 @@ body {
         margin-top: 20px;
     }
 }
+/* Khu vực mua hàng trong trang chi tiết */
+.buy-box {
+    background-color: #fff7ed;
+    border: 1px solid #f0c28b;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.buy-box h5 {
+    color: #5c2c06;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.quantity-box {
+    display: flex;
+    align-items: center;
+    width: 170px;
+}
+
+.quantity-box input {
+    width: 70px;
+    margin: 0 8px;
+}
+
+.total-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: #5c2c06;
+}
+
+#totalPrice {
+    color: #c0392b;
+}

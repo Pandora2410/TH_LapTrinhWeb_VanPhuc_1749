@@ -62,8 +62,28 @@
                 <h4 id="bookPrice" class="detail-price"></h4>
                 <p id="bookDescription" class="detail-description"></p>
 
-                <div class="mt-4">
-                    <a href="#" class="btn btn-buy">Mua ngay</a>
+                <!-- Khu vực mua hàng -->
+                <div class="buy-box mt-4">
+                    <h5>Thông tin mua hàng</h5>
+
+                    <div class="mb-3">
+                        <label for="quantity" class="form-label">Số lượng:</label>
+
+                        <div class="quantity-box">
+                            <button type="button" class="btn btn-outline-secondary" onclick="decreaseQuantity()">-</button>
+
+                            <input type="number" id="quantity" class="form-control text-center" value="1" min="1" onchange="updateTotal()">
+
+                            <button type="button" class="btn btn-outline-secondary" onclick="increaseQuantity()">+</button>
+                        </div>
+                    </div>
+
+                    <p class="total-text">
+                        Tổng tiền:
+                        <span id="totalPrice">0đ</span>
+                    </p>
+
+                    <button class="btn btn-buy" onclick="buyNow()">Mua ngay</button>
                     <a href="index.html" class="btn btn-secondary">Quay lại danh sách</a>
                 </div>
             </div>
@@ -102,36 +122,36 @@
             1: {
                 name: "Đắc Nhân Tâm",
                 author: "Tác giả: Dale Carnegie",
-                price: "120.000đ",
-                image: "https://picsum.photos/id/24/600/400",
+                price: 120000,
+                image: "image/dac-nhan-tam.jpg",
                 description: "Đắc Nhân Tâm là một trong những cuốn sách nổi tiếng nhất về nghệ thuật giao tiếp, ứng xử và tạo thiện cảm với người khác. Cuốn sách giúp người đọc hiểu cách xây dựng các mối quan hệ tốt đẹp trong cuộc sống và công việc."
             },
             2: {
                 name: "Nhà Giả Kim",
                 author: "Tác giả: Paulo Coelho",
-                price: "95.000đ",
-                image: "https://picsum.photos/id/20/600/400",
+                price: 95000,
+                image: "image/nha-gia-kim.jpg",
                 description: "Nhà Giả Kim kể về hành trình đi tìm kho báu của chàng chăn cừu Santiago. Qua câu chuyện, người đọc cảm nhận được ý nghĩa của ước mơ, niềm tin và sự kiên trì trên hành trình cuộc đời."
             },
             3: {
                 name: "Tuổi Trẻ Đáng Giá Bao Nhiêu",
                 author: "Tác giả: Rosie Nguyễn",
-                price: "88.000đ",
-                image: "https://picsum.photos/id/42/600/400",
+                price: 88000,
+                image: "image/tuoi-tre-dang-gia-bao-nhieu.jpg",
                 description: "Cuốn sách dành cho những người trẻ đang tìm kiếm định hướng trong học tập, công việc và cuộc sống. Nội dung gần gũi, dễ hiểu, truyền cảm hứng để người trẻ sống chủ động hơn."
             },
             4: {
                 name: "Tư Duy Nhanh Và Chậm",
                 author: "Tác giả: Daniel Kahneman",
-                price: "180.000đ",
-                image: "https://picsum.photos/id/48/600/400",
+                price: 180000,
+                image: "image/tu-duy-nhanh-va-cham.jpg",
                 description: "Tư Duy Nhanh Và Chậm phân tích hai hệ thống tư duy của con người: tư duy nhanh theo cảm tính và tư duy chậm theo logic. Đây là cuốn sách phù hợp với người quan tâm đến tâm lý học và ra quyết định."
             },
             5: {
                 name: "Atomic Habits",
                 author: "Tác giả: James Clear",
-                price: "150.000đ",
-                image: "https://picsum.photos/id/367/600/400",
+                price: 150000,
+                image: "image/actomic-habits.jpg",
                 description: "Atomic Habits hướng dẫn cách xây dựng những thói quen nhỏ nhưng có tác động lớn theo thời gian. Cuốn sách phù hợp với người muốn cải thiện bản thân, học tập hiệu quả và làm việc kỷ luật hơn."
             }
         };
@@ -141,18 +161,67 @@
 
         const book = books[id];
 
+        function formatMoney(number) {
+            return number.toLocaleString("vi-VN") + "đ";
+        }
+
+        function updateTotal() {
+            const quantityInput = document.getElementById("quantity");
+            let quantity = parseInt(quantityInput.value);
+
+            if (isNaN(quantity) || quantity < 1) {
+                quantity = 1;
+                quantityInput.value = 1;
+            }
+
+            const total = book.price * quantity;
+            document.getElementById("totalPrice").innerText = formatMoney(total);
+        }
+
+        function increaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            quantityInput.value = parseInt(quantityInput.value) + 1;
+            updateTotal();
+        }
+
+        function decreaseQuantity() {
+            const quantityInput = document.getElementById("quantity");
+            let quantity = parseInt(quantityInput.value);
+
+            if (quantity > 1) {
+                quantityInput.value = quantity - 1;
+            }
+
+            updateTotal();
+        }
+
+        function buyNow() {
+            const quantity = document.getElementById("quantity").value;
+            const total = document.getElementById("totalPrice").innerText;
+
+            alert(
+                "Bạn đã chọn mua:\n" +
+                book.name + "\n" +
+                "Số lượng: " + quantity + "\n" +
+                "Tổng tiền: " + total
+            );
+        }
+
         if (book) {
             document.getElementById("bookImage").src = book.image;
             document.getElementById("bookImage").alt = book.name;
             document.getElementById("bookName").innerText = book.name;
             document.getElementById("bookAuthor").innerText = book.author;
-            document.getElementById("bookPrice").innerText = "Giá: " + book.price;
+            document.getElementById("bookPrice").innerText = "Giá: " + formatMoney(book.price);
             document.getElementById("bookDescription").innerText = book.description;
+
+            updateTotal();
         } else {
             document.getElementById("bookName").innerText = "Không tìm thấy sách";
             document.getElementById("bookAuthor").innerText = "";
             document.getElementById("bookPrice").innerText = "";
             document.getElementById("bookDescription").innerText = "Sản phẩm này không tồn tại hoặc đường dẫn không hợp lệ.";
+            document.querySelector(".buy-box").style.display = "none";
         }
     </script>
 
