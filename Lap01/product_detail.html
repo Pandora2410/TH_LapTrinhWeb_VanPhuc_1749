@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sách</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- CSS riêng -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container text-center">
+            <h1>CHI TIẾT SÁCH</h1>
+            <p>Thông tin chi tiết về sản phẩm bạn đã chọn</p>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Book Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sách mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Chi tiết sản phẩm -->
+    <div class="container mt-5">
+        <div class="row product-detail-box">
+
+            <div class="col-md-6">
+                <img id="bookImage" src="" class="img-fluid detail-img" alt="Sách">
+            </div>
+
+            <div class="col-md-6">
+                <h2 id="bookName"></h2>
+                <p id="bookAuthor" class="author"></p>
+                <h4 id="bookPrice" class="detail-price"></h4>
+                <p id="bookDescription" class="detail-description"></p>
+
+                <div class="mt-4">
+                    <a href="#" class="btn btn-buy">Mua ngay</a>
+                    <a href="index.html" class="btn btn-secondary">Quay lại danh sách</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row text-center">
+
+                <div class="col-md-4 footer-item">
+                    <h4>Book Store</h4>
+                    <p>Website bán sách trực tuyến dành cho người yêu tri thức.</p>
+                </div>
+
+                <div class="col-md-4 footer-item">
+                    <h4>Hỗ trợ</h4>
+                    <p>Chính sách đổi trả, giao hàng và thanh toán an toàn.</p>
+                </div>
+
+                <div class="col-md-4 footer-item">
+                    <h4>Liên hệ</h4>
+                    <p>Email: bookstore@gmail.com</p>
+                    <p>Hotline: 0123 456 789</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript xử lý chi tiết sách -->
+    <script>
+        const books = {
+            1: {
+                name: "Đắc Nhân Tâm",
+                author: "Tác giả: Dale Carnegie",
+                price: "120.000đ",
+                image: "https://picsum.photos/id/24/600/400",
+                description: "Đắc Nhân Tâm là một trong những cuốn sách nổi tiếng nhất về nghệ thuật giao tiếp, ứng xử và tạo thiện cảm với người khác. Cuốn sách giúp người đọc hiểu cách xây dựng các mối quan hệ tốt đẹp trong cuộc sống và công việc."
+            },
+            2: {
+                name: "Nhà Giả Kim",
+                author: "Tác giả: Paulo Coelho",
+                price: "95.000đ",
+                image: "https://picsum.photos/id/20/600/400",
+                description: "Nhà Giả Kim kể về hành trình đi tìm kho báu của chàng chăn cừu Santiago. Qua câu chuyện, người đọc cảm nhận được ý nghĩa của ước mơ, niềm tin và sự kiên trì trên hành trình cuộc đời."
+            },
+            3: {
+                name: "Tuổi Trẻ Đáng Giá Bao Nhiêu",
+                author: "Tác giả: Rosie Nguyễn",
+                price: "88.000đ",
+                image: "https://picsum.photos/id/42/600/400",
+                description: "Cuốn sách dành cho những người trẻ đang tìm kiếm định hướng trong học tập, công việc và cuộc sống. Nội dung gần gũi, dễ hiểu, truyền cảm hứng để người trẻ sống chủ động hơn."
+            },
+            4: {
+                name: "Tư Duy Nhanh Và Chậm",
+                author: "Tác giả: Daniel Kahneman",
+                price: "180.000đ",
+                image: "https://picsum.photos/id/48/600/400",
+                description: "Tư Duy Nhanh Và Chậm phân tích hai hệ thống tư duy của con người: tư duy nhanh theo cảm tính và tư duy chậm theo logic. Đây là cuốn sách phù hợp với người quan tâm đến tâm lý học và ra quyết định."
+            },
+            5: {
+                name: "Atomic Habits",
+                author: "Tác giả: James Clear",
+                price: "150.000đ",
+                image: "https://picsum.photos/id/367/600/400",
+                description: "Atomic Habits hướng dẫn cách xây dựng những thói quen nhỏ nhưng có tác động lớn theo thời gian. Cuốn sách phù hợp với người muốn cải thiện bản thân, học tập hiệu quả và làm việc kỷ luật hơn."
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get("id");
+
+        const book = books[id];
+
+        if (book) {
+            document.getElementById("bookImage").src = book.image;
+            document.getElementById("bookImage").alt = book.name;
+            document.getElementById("bookName").innerText = book.name;
+            document.getElementById("bookAuthor").innerText = book.author;
+            document.getElementById("bookPrice").innerText = "Giá: " + book.price;
+            document.getElementById("bookDescription").innerText = book.description;
+        } else {
+            document.getElementById("bookName").innerText = "Không tìm thấy sách";
+            document.getElementById("bookAuthor").innerText = "";
+            document.getElementById("bookPrice").innerText = "";
+            document.getElementById("bookDescription").innerText = "Sản phẩm này không tồn tại hoặc đường dẫn không hợp lệ.";
+        }
+    </script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

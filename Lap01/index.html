@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store - Trang bán sách</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+
+    <!-- CSS riêng -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container text-center">
+            <h1>BOOK STORE</h1>
+            <p>Khám phá tri thức qua từng trang sách</p>
+        </div>
+    </header>
+
+    <!-- Menu -->
+    <nav class="navbar navbar-expand-lg navbar-dark menu">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">Book Store</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarMenu">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Trang chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sách mới</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Khuyến mãi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Liên hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="container">
+            <h2>Ưu đãi sách hay mỗi ngày</h2>
+            <p>Giảm giá lên đến 30% cho các đầu sách nổi bật</p>
+            <a href="#book-list" class="btn btn-light">Xem sách ngay</a>
+        </div>
+    </section>
+
+    <!-- Nội dung chính -->
+    <div class="container mt-4">
+        <div class="row">
+
+            <!-- Danh sách sản phẩm -->
+            <div class="col-md-9" id="book-list">
+                <h3 class="section-title">Danh sách sách nổi bật</h3>
+
+                <div class="row row-cols-1 row-cols-md-3 g-4">
+
+                    <!-- Sách 1 -->
+                    <div class="col">
+                        <div class="card book-card">
+                            <a href="product_detail.html?id=1">
+                                <img src="https://picsum.photos/id/24/600/400" class="card-img-top" alt="Đắc Nhân Tâm">
+                            </a>
+
+                            <div class="card-body">
+                                <a href="product_detail.html?id=1" class="book-title-link">
+                                    <h5 class="card-title">Đắc Nhân Tâm</h5>
+                                </a>
+
+                                <p class="card-text">Cuốn sách nổi tiếng về nghệ thuật giao tiếp và ứng xử.</p>
+                                <p class="price">Giá: 120.000đ</p>
+                                <a href="#" class="btn btn-buy">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sách 2 -->
+                    <div class="col">
+                        <div class="card book-card">
+                            <a href="product_detail.html?id=2">
+                                <img src="https://picsum.photos/id/20/600/400" class="card-img-top" alt="Nhà Giả Kim">
+                            </a>
+
+                            <div class="card-body">
+                                <a href="product_detail.html?id=2" class="book-title-link">
+                                    <h5 class="card-title">Nhà Giả Kim</h5>
+                                </a>
+
+                                <p class="card-text">Câu chuyện truyền cảm hứng về ước mơ và hành trình sống.</p>
+                                <p class="price">Giá: 95.000đ</p>
+                                <a href="#" class="btn btn-buy">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sách 3 -->
+                    <div class="col">
+                        <div class="card book-card">
+                            <a href="product_detail.html?id=3">
+                                <img src="https://picsum.photos/id/42/600/400" class="card-img-top" alt="Tuổi Trẻ Đáng Giá Bao Nhiêu">
+                            </a>
+
+                            <div class="card-body">
+                                <a href="product_detail.html?id=3" class="book-title-link">
+                                    <h5 class="card-title">Tuổi Trẻ Đáng Giá Bao Nhiêu</h5>
+                                </a>
+
+                                <p class="card-text">Một cuốn sách dành cho người trẻ trên hành trình trưởng thành.</p>
+                                <p class="price">Giá: 88.000đ</p>
+                                <a href="#" class="btn btn-buy">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sách 4 -->
+                    <div class="col">
+                        <div class="card book-card">
+                            <a href="product_detail.html?id=4">
+                                <img src="https://picsum.photos/id/48/600/400" class="card-img-top" alt="Tư Duy Nhanh Và Chậm">
+                            </a>
+
+                            <div class="card-body">
+                                <a href="product_detail.html?id=4" class="book-title-link">
+                                    <h5 class="card-title">Tư Duy Nhanh Và Chậm</h5>
+                                </a>
+
+                                <p class="card-text">Khám phá cách con người suy nghĩ và ra quyết định.</p>
+                                <p class="price">Giá: 180.000đ</p>
+                                <a href="#" class="btn btn-buy">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sách 5 -->
+                    <div class="col">
+                        <div class="card book-card">
+                            <a href="product_detail.html?id=5">
+                                <img src="https://picsum.photos/id/367/600/400" class="card-img-top" alt="Atomic Habits">
+                            </a>
+
+                            <div class="card-body">
+                                <a href="product_detail.html?id=5" class="book-title-link">
+                                    <h5 class="card-title">Atomic Habits</h5>
+                                </a>
+
+                                <p class="card-text">Hướng dẫn xây dựng thói quen nhỏ để tạo thay đổi lớn.</p>
+                                <p class="price">Giá: 150.000đ</p>
+                                <a href="#" class="btn btn-buy">Mua ngay</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="col-md-3">
+                <div class="sidebar">
+                    <h5>Danh mục sách</h5>
+                    <ul>
+                        <li><a href="#">Kỹ năng sống</a></li>
+                        <li><a href="#">Tiểu thuyết</a></li>
+                        <li><a href="#">Kinh tế</a></li>
+                        <li><a href="#">Tâm lý học</a></li>
+                        <li><a href="#">Sách học tập</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar mt-4">
+                    <h5>Social Media</h5>
+                    <ul>
+                        <li><a href="#">Facebook</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">TikTok</a></li>
+                        <li><a href="#">YouTube</a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row text-center">
+
+                <div class="col-md-4 footer-item">
+                    <h4>Book Store</h4>
+                    <p>Website bán sách trực tuyến dành cho người yêu tri thức.</p>
+                </div>
+
+                <div class="col-md-4 footer-item">
+                    <h4>Hỗ trợ</h4>
+                    <p>Chính sách đổi trả, giao hàng và thanh toán an toàn.</p>
+                </div>
+
+                <div class="col-md-4 footer-item">
+                    <h4>Liên hệ</h4>
+                    <p>Email: bookstore@gmail.com</p>
+                    <p>Hotline: 0123 456 789</p>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>

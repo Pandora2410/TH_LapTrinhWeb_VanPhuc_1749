@@ -1,0 +1,256 @@
+/* Reset nhẹ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Toàn trang */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f8f5f0;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background: linear-gradient(135deg, #5c2c06, #c46a1b);
+    color: white;
+    padding: 40px 0;
+}
+
+.header h1 {
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.header p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+/* Menu */
+.menu {
+    background-color: #7a3e0d;
+}
+
+.navbar .nav-link {
+    color: white;
+    font-weight: 500;
+    margin-left: 15px;
+}
+
+.navbar .nav-link:hover {
+    color: #ffd28a;
+}
+
+/* Banner */
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)),
+        url("https://picsum.photos/id/367/1200/400");
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.banner h2 {
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.banner p {
+    font-size: 20px;
+    margin: 15px 0;
+}
+
+/* Tiêu đề khu vực */
+.section-title {
+    color: #5c2c06;
+    font-weight: bold;
+    margin-bottom: 20px;
+    border-left: 6px solid #c46a1b;
+    padding-left: 12px;
+}
+
+/* Card sách */
+.book-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.book-card img {
+    height: 210px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.book-card:hover img {
+    transform: scale(1.05);
+}
+
+.book-title-link {
+    text-decoration: none;
+    color: #5c2c06;
+}
+
+.book-title-link:hover {
+    color: #c46a1b;
+}
+
+.book-card .card-title {
+    font-weight: bold;
+}
+
+.book-card .card-text {
+    font-size: 14px;
+    min-height: 60px;
+}
+
+.price {
+    color: #c0392b;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+/* Nút mua */
+.btn-buy {
+    background-color: #c46a1b;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 20px;
+    transition: all 0.3s ease;
+}
+
+.btn-buy:hover {
+    background-color: #5c2c06;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Sidebar */
+.sidebar {
+    background-color: #c46a1b;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.sidebar h5 {
+    font-weight: bold;
+    margin-bottom: 15px;
+    border-bottom: 2px solid white;
+    padding-bottom: 8px;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar ul li a {
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar ul li a:hover {
+    color: #ffe0a3;
+    padding-left: 8px;
+}
+
+/* Trang chi tiết */
+.product-detail-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.detail-img {
+    border-radius: 15px;
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+    transition: all 0.3s ease;
+}
+
+.detail-img:hover {
+    transform: scale(1.03);
+}
+
+#bookName {
+    color: #5c2c06;
+    font-weight: bold;
+}
+
+.author {
+    color: #777;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.detail-price {
+    color: #c0392b;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+.detail-description {
+    margin-top: 20px;
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Footer */
+.footer {
+    background-color: #2d1b0f;
+    color: white;
+    padding: 35px 0;
+}
+
+.footer-item h4 {
+    color: #ffd28a;
+}
+
+.footer-item p {
+    margin-bottom: 5px;
+}
+
+/* Responsive cho điện thoại */
+@media (max-width: 768px) {
+    .banner h2 {
+        font-size: 30px;
+    }
+
+    .banner p {
+        font-size: 16px;
+    }
+
+    .sidebar {
+        margin-top: 25px;
+    }
+
+    .product-detail-box {
+        padding: 20px;
+    }
+
+    #bookName {
+        margin-top: 20px;
+    }
+}
