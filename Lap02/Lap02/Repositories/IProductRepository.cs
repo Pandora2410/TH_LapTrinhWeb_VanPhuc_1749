@@ -4,10 +4,10 @@ namespace Lap02.Repositories
 {
     public interface IProductRepository
     {
-        IEnumerable<Product> GetAll();
-        Product GetById(int id);
-        void Add(Product product);
-        void Update(Product product);
-        void Delete(int id);
+        Task<IEnumerable<Product>> GetAll();
+        Task<Product?> GetById(int id);
+        Task Add(Product product);
+        Task Update(Product product);
+        Task Delete(int id);
     }
 }

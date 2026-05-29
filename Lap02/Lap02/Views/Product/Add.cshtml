@@ -5,10 +5,6 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<style>
-
-</style>
-
 <div class="add-page">
     <div class="add-container">
 
@@ -29,50 +25,47 @@
             <form asp-action="Add" method="post" enctype="multipart/form-data">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label asp-for="Id" class="control-label"></label>
-                            <input asp-for="Id" class="form-control" placeholder="Enter product ID" />
-                            <span asp-validation-for="Id" class="text-danger"></span>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6">
-                        <div class="form-group">
-                            <label asp-for="CategoryId" class="control-label">Category</label>
-                            <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
-                                <option value="">-- Select Category --</option>
-                            </select>
-                            <span asp-validation-for="CategoryId" class="text-danger"></span>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label asp-for="CategoryId" class="control-label">Category</label>
+                    <select asp-for="CategoryId" asp-items="ViewBag.Categories" class="form-control">
+                        <option value="">-- Select Category --</option>
+                    </select>
+                    <span asp-validation-for="CategoryId" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Name" class="control-label"></label>
+                    <label asp-for="Name" class="control-label">Product Name</label>
                     <input asp-for="Name" class="form-control" placeholder="Enter product name" />
                     <span asp-validation-for="Name" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Price" class="control-label"></label>
+                    <label asp-for="Price" class="control-label">Price</label>
                     <input asp-for="Price" class="form-control" placeholder="Enter product price" />
                     <span asp-validation-for="Price" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="Description" class="control-label"></label>
+                    <label asp-for="Description" class="control-label">Description</label>
                     <textarea asp-for="Description" class="form-control" rows="4" placeholder="Enter product description"></textarea>
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
 
                 <div class="form-group">
-                    <label asp-for="ImageUrl" class="control-label">Product Image</label>
+                    <label class="control-label">Main Product Image</label>
 
                     <div class="image-upload-box">
                         <input type="file" name="imageUrl" class="form-control" />
-                        <p class="image-note">Choose an image file for this product.</p>
+                        <p class="image-note">This image will be saved into Products.ImageUrl.</p>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">More Product Images</label>
+
+                    <div class="image-upload-box">
+                        <input type="file" name="imageUrls" class="form-control" multiple />
+                        <p class="image-note">These images will be saved into ProductImages table.</p>
                     </div>
                 </div>
 
