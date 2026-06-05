@@ -18,9 +18,48 @@ namespace Lap02.Controllers
             _categoryRepository = categoryRepository;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string? searchString, int? categoryId, decimal? minPrice, decimal? maxPrice)
         {
             var products = await _productRepository.GetAll();
+
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                products = products
+                    .Where(p =>
+                        p.Name.Contains(searchString, StringComparison.OrdinalIgnoreCase) ||
+                        (!string.IsNullOrEmpty(p.Description) &&
+                         p.Description.Contains(searchString, StringComparison.OrdinalIgnoreCase)))
+                    .ToList();
+            }
+
+            if (categoryId.HasValue && categoryId.Value > 0)
+            {
+                products = products
+                    .Where(p => p.CategoryId == categoryId.Value)
+                    .ToList();
+            }
+
+            if (minPrice.HasValue)
+            {
+                products = products
+                    .Where(p => p.Price >= minPrice.Value)
+                    .ToList();
+            }
+
+            if (maxPrice.HasValue)
+            {
+                products = products
+                    .Where(p => p.Price <= maxPrice.Value)
+                    .ToList();
+            }
+
+            ViewBag.SearchString = searchString;
+            ViewBag.CategoryId = categoryId;
+            ViewBag.MinPrice = minPrice;
+            ViewBag.MaxPrice = maxPrice;
+
+            ViewBag.Categories = await _categoryRepository.GetAllCategories();
+
             return View(products);
         }
 

@@ -1,8 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace Lap02.Models
 {
-    public class ApplicationDbContext:DbContext
+    public class ApplicationDbContext:IdentityDbContext<ApplicationUser>
     {
         public
 ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
@@ -11,6 +12,5 @@ ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(opti
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<ProductImage> ProductImages { get; set; }
-        public DbSet<UserAccount> userAccounts { get; set; }
     }
 }

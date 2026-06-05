@@ -7,14 +7,17 @@
 
     var username = Context.Session.GetString("Username");
     var role = Context.Session.GetString("Role");
-    var isAdmin = role == "Admin";
 
-    var totalBooks = Model != null ? Model.Count() : 0;
-    var categories = Model != null
-        ? Model.Where(x => x.Category != null).Select(x => x.Category?.Name).Distinct().Count()
-        : 0;
+    var isAdmin = User.IsInRole("Admin") || role == "Admin";
+
+    var totalBooks = Model?.Count() ?? 0;
+
+    var categories = Model?
+        .Where(x => x.Category != null && !string.IsNullOrEmpty(x.Category.Name))
+        .Select(x => x.Category!.Name)
+        .Distinct()
+        .Count() ?? 0;
 }
-
 
 <div class="book-page">
     <div class="book-shell">
@@ -26,14 +29,34 @@
             </a>
 
             <div class="nav-actions">
-                @if (!string.IsNullOrEmpty(username))
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
                 {
-                    <div class="user-chip">@username - @role</div>
-                    <a asp-controller="Auth" asp-action="Logout" class="logout-link">Logout</a>
+                    <div class="user-chip">
+                        @(string.IsNullOrEmpty(username) ? User.Identity.Name : username)
+
+                        @if (!string.IsNullOrEmpty(role))
+                        {
+                            <span> - @role</span>
+                        }
+                        else if (isAdmin)
+                        {
+                            <span> - Admin</span>
+                        }
+                    </div>
+
+                    <form asp-area="Identity" asp-page="/Account/Logout" method="post" class="text-warning">
+                        <button type="submit" class="logout-link text-warning">
+                            Logout
+                        </button>
+                    </form>
                 }
                 else
                 {
-                    <a asp-controller="Auth" asp-action="Login" class="login-link">Login</a>
+                    <a class="nav-link text-warning"
+                       asp-area="Identity"
+                       asp-page="/Account/Login">
+                        Login
+                    </a>
                 }
             </div>
         </div>
@@ -99,7 +122,70 @@
                 <div class="stat-label">Hours online store</div>
             </div>
         </section>
+        <section class="filter-section">
+    <form method="get" action="@Url.Action("Index", "Product")#book-list" class="filter-box">
+        <div class="filter-group">
+            <label>Tìm kiếm</label>
+            <input type="text"
+                   name="searchString"
+                   value="@ViewBag.SearchString"
+                   placeholder="Nhập tên sách hoặc mô tả..."
+                   class="filter-input" />
+        </div>
 
+        <div class="filter-group">
+            <label>Danh mục</label>
+            <select name="categoryId" class="filter-input">
+                <option value="">All danh mục</option>
+
+                @if (ViewBag.Categories != null)
+                {
+                    foreach (var category in ViewBag.Categories)
+                    {
+                        if (ViewBag.CategoryId != null && ViewBag.CategoryId == category.Id)
+                        {
+                            <option value="@category.Id" selected>
+                                @category.Name
+                            </option>
+                        }
+                        else
+                        {
+                            <option value="@category.Id">
+                                @category.Name
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Giá từ</label>
+            <input type="number"
+                   name="minPrice"
+                   value="@ViewBag.MinPrice"
+                   placeholder="0"
+                   class="filter-input" />
+        </div>
+
+        <div class="filter-group">
+            <label>Giá đến</label>
+            <input type="number"
+                   name="maxPrice"
+                   value="@ViewBag.MaxPrice"
+                   placeholder="1000000"
+                   class="filter-input" />
+        </div>
+
+        <div class="filter-actions">
+            <button type="submit" class="filter-btn">
+                Search
+            </button>
+
+            <a asp-controller="Product" asp-action="Index"  asp-fragment="book-list" class="reset-btn"> Reset </a>
+        </div>
+    </form>
+</section>
         <section id="book-list">
             <div class="section-heading">
                 <h2>
@@ -118,6 +204,15 @@
                 <div class="book-grid">
                     @foreach (var item in Model)
                     {
+                        var description = string.IsNullOrEmpty(item.Description)
+                            ? "Không có mô tả cho sản phẩm này."
+                            : item.Description;
+
+                        if (description.Length > 120)
+                        {
+                            description = description.Substring(0, 120) + "...";
+                        }
+
                         <article class="book-card">
                             <div class="book-img-wrap">
                                 <div class="category-pill">
@@ -140,7 +235,7 @@
                                 <h3 class="book-name">@item.Name</h3>
 
                                 <div class="book-desc">
-                                    @item.Description
+                                    @description
                                 </div>
 
                                 <div class="book-bottom">
@@ -149,17 +244,23 @@
                                     </div>
 
                                     <div class="action-links">
-                                        <a asp-action="Display" asp-route-id="@item.Id" class="mini-btn">
+                                        <a asp-action="Display"
+                                           asp-route-id="@item.Id"
+                                           class="mini-btn">
                                             Details
                                         </a>
 
                                         @if (isAdmin)
                                         {
-                                            <a asp-action="Update" asp-route-id="@item.Id" class="mini-btn">
+                                            <a asp-action="Update"
+                                               asp-route-id="@item.Id"
+                                               class="mini-btn">
                                                 Edit
                                             </a>
 
-                                            <a asp-action="Delete" asp-route-id="@item.Id" class="mini-btn delete">
+                                            <a asp-action="Delete"
+                                               asp-route-id="@item.Id"
+                                               class="mini-btn delete">
                                                 Delete
                                             </a>
                                         }
@@ -173,16 +274,23 @@
             else
             {
                 <div class="empty-area">
-                    No books found.
+                    <div class="empty-area">
+                        <h4>Không tìm thấy sách phù hợp.</h4>
+                        <p>Hãy thử thay đổi từ khóa, danh mục hoặc khoảng giá.</p>
 
-                    @if (isAdmin)
-                    {
                         <div style="margin-top: 14px;">
-                            <a asp-action="Add" class="primary-btn">
-                                Add first book
+                            <a asp-controller="Product" asp-action="Index" class="primary-btn">
+                                Xóa bộ lọc
                             </a>
+
+                            @if (isAdmin)
+                            {
+                                <a asp-action="Add" class="admin-btn" style="margin-left: 10px;">
+                                    Add first book
+                                </a>
+                            }
                         </div>
-                    }
+                    </div>
                 </div>
             }
         </section>
@@ -208,17 +316,23 @@
 <script>
     const cards = document.querySelectorAll('.book-card');
 
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-            }
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.18
         });
-    }, {
-        threshold: 0.18
-    });
 
-    cards.forEach(function (card) {
-        observer.observe(card);
-    });
+        cards.forEach(function (card) {
+            observer.observe(card);
+        });
+    } else {
+        cards.forEach(function (card) {
+            card.classList.add('show');
+        });
+    }
 </script>

@@ -50,10 +50,10 @@
                     </div>
 
                     <div class="info-row">
-                        <div class="info-label">Product ID</div>
+                        <div class="info-label">Category</div>
                         <div class="info-value">
-                            <span class="id-badge">
-                                #@Html.DisplayFor(model => model.Id)
+                            <span class="category-badge">
+                                @(Model.Category != null ? Model.Category.Name : "No Category")
                             </span>
                         </div>
                     </div>
@@ -63,15 +63,6 @@
                         <div class="info-value">
                             <span class="price-badge">
                                 @Html.DisplayFor(model => model.Price)
-                            </span>
-                        </div>
-                    </div>
-
-                    <div class="info-row">
-                        <div class="info-label">Category</div>
-                        <div class="info-value">
-                            <span class="category-badge">
-                                Category @Html.DisplayFor(model => model.CategoryId)
                             </span>
                         </div>
                     </div>
