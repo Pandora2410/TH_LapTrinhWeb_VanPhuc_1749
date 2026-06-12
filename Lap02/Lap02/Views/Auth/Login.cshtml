@@ -1,0 +1,47 @@
+﻿@model Lap02.ViewModels.LoginViewModel
+
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="login-page">
+    <div class="login-card">
+        <h1 class="login-title">Login</h1>
+        <p class="login-subtitle">Đăng nhập để kiểm tra quyền User và Admin.</p>
+
+        @if (ViewBag.Error != null)
+        {
+            <div class="error-box">
+                @ViewBag.Error
+            </div>
+        }
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                <div asp-validation-summary="ModelOnly"></div>
+            </div>
+        }
+        <form asp-action="Login" method="post">
+            <div class="form-group">
+                <label class="text-black">Username</label>
+                <input asp-for="Username" class="form-control" placeholder="Enter username" />
+            </div>
+
+            <div class="form-group">
+                <label class="text-black">Password</label>
+                <input asp-for="Password" type="password" class="form-control" placeholder="Enter password" />
+            </div>
+
+            <button type="submit" class="btn-login">
+                Login
+            </button>
+        </form>
+
+        <div class="account-note">
+            <strong>Admin:</strong> admin / 123 <br />
+            <strong>User:</strong> user / 123
+        </div>
+    </div>
+</div>

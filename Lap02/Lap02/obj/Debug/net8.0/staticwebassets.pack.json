@@ -1,0 +1,357 @@
+{
+  "Files": [
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Lap02.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Lap02.bundle.scp.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\05827918-0da8-48d4-a0d7-3792d10fe655.jpg",
+      "PackagePath": "staticwebassets\\images\\05827918-0da8-48d4-a0d7-3792d10fe655.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\15b9c645-10fc-46ed-9f44-c142dbd67a1f.jpg",
+      "PackagePath": "staticwebassets\\images\\15b9c645-10fc-46ed-9f44-c142dbd67a1f.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\1aa09fe9-4e5d-4841-b18a-e7e55fc7f400.jpg",
+      "PackagePath": "staticwebassets\\images\\1aa09fe9-4e5d-4841-b18a-e7e55fc7f400.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\4f718221-e6d2-430e-9694-d96a4fe25f3b.jpg",
+      "PackagePath": "staticwebassets\\images\\4f718221-e6d2-430e-9694-d96a4fe25f3b.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\625f5d9e-7a8f-4834-9fe8-4bdd2c4c6a8b.jpg",
+      "PackagePath": "staticwebassets\\images\\625f5d9e-7a8f-4834-9fe8-4bdd2c4c6a8b.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\9f652510-bdeb-487d-81d1-4368a3736b6f.jpg",
+      "PackagePath": "staticwebassets\\images\\9f652510-bdeb-487d-81d1-4368a3736b6f.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\9f9f224b-cd6e-4a21-b8fa-c2e3fe1a32a1.jpg",
+      "PackagePath": "staticwebassets\\images\\9f9f224b-cd6e-4a21-b8fa-c2e3fe1a32a1.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\OIP.jpg",
+      "PackagePath": "staticwebassets\\images\\OIP.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\a6343c16-c281-4bfb-9422-1b6264ffbfce.jpg",
+      "PackagePath": "staticwebassets\\images\\a6343c16-c281-4bfb-9422-1b6264ffbfce.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\book-aspnet.jpg",
+      "PackagePath": "staticwebassets\\images\\book-aspnet.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\book-business.jpg",
+      "PackagePath": "staticwebassets\\images\\book-business.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\book-communication.jpg",
+      "PackagePath": "staticwebassets\\images\\book-communication.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\book-csharp.jpg",
+      "PackagePath": "staticwebassets\\images\\book-csharp.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\book-novel.jpg",
+      "PackagePath": "staticwebassets\\images\\book-novel.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\dac-nhan-tam.jpg",
+      "PackagePath": "staticwebassets\\images\\dac-nhan-tam.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\doraemon-tap-1.jpg",
+      "PackagePath": "staticwebassets\\images\\doraemon-tap-1.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\e8a7e028-411f-4ef1-a9cc-7af041a64e5a.jpg",
+      "PackagePath": "staticwebassets\\images\\e8a7e028-411f-4ef1-a9cc-7af041a64e5a.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\f3102a00-a634-4e04-83c6-b0f500423f41.jpg",
+      "PackagePath": "staticwebassets\\images\\f3102a00-a634-4e04-83c6-b0f500423f41.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\kinh-te-hoc.jpg",
+      "PackagePath": "staticwebassets\\images\\kinh-te-hoc.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\lap-trinh-co-ban.jpg",
+      "PackagePath": "staticwebassets\\images\\lap-trinh-co-ban.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\nha-gia-kim.jpg",
+      "PackagePath": "staticwebassets\\images\\nha-gia-kim.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\tieng-anh-gt-cb.jpg",
+      "PackagePath": "staticwebassets\\images\\tieng-anh-gt-cb.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\images\\tuoi-tre-dang-gia-bao-nhieu.jpg",
+      "PackagePath": "staticwebassets\\images\\tuoi-tre-dang-gia-bao-nhieu.jpg"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "M:\\test\\Lap02\\Lap02\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Lap02.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Lap02.props",
+      "PackagePath": "build\\Lap02.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Lap02.props",
+      "PackagePath": "buildMultiTargeting\\Lap02.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Lap02.props",
+      "PackagePath": "buildTransitive\\Lap02.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

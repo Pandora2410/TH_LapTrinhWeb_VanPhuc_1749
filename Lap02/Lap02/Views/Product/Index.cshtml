@@ -1,0 +1,358 @@
+﻿@using Microsoft.AspNetCore.Http
+@model IEnumerable<Lap02.Models.Product>
+
+@{
+    ViewData["Title"] = "Book Store";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var username = Context.Session.GetString("Username");
+    var role = Context.Session.GetString("Role");
+
+    var isAdmin = User.IsInRole("Admin") || role == "Admin";
+
+    var totalBooks = Model?.Count() ?? 0;
+
+    var categories = Model?
+        .Where(x => x.Category != null && !string.IsNullOrEmpty(x.Category.Name))
+        .Select(x => x.Category!.Name)
+        .Distinct()
+        .Count() ?? 0;
+}
+
+<div class="book-page">
+    <div class="book-shell">
+
+        <div class="top-nav-custom">
+            <a asp-controller="Product" asp-action="Index" class="brand-mark">
+                <div class="brand-icon">📚</div>
+                <div class="brand-text">BookTown</div>
+            </a>
+
+            <div class="nav-actions">
+                @if (User.Identity != null && User.Identity.IsAuthenticated)
+                {
+                    <div class="user-chip">
+                        @(string.IsNullOrEmpty(username) ? User.Identity.Name : username)
+
+                        @if (!string.IsNullOrEmpty(role))
+                        {
+                            <span> - @role</span>
+                        }
+                        else if (isAdmin)
+                        {
+                            <span> - Admin</span>
+                        }
+                    </div>
+
+                    <form asp-area="" asp-controller="Auth" asp-action="Logout" method="post" class="text-warning">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="logout-link text-warning">
+                            Logout
+                        </button>
+                    </form>
+                }
+                else
+                {
+                    <a class="nav-link text-warning"
+                       asp-area=""
+                       asp-controller="Auth"
+                       asp-action="Login">
+                        Login
+                    </a>
+                }
+            </div>
+        </div>
+
+        <section class="hero">
+            <div>
+                <div class="hero-kicker">Future of reading</div>
+
+                <h1 class="hero-title">
+                    Discover
+                    <span>your next</span>
+                    story
+                </h1>
+
+                <p class="hero-desc">
+                    BookTown mang đến không gian mua sách hiện đại, nơi người đọc có thể khám phá sách văn học,
+                    kỹ năng, công nghệ, ngoại ngữ và nhiều thể loại khác với giao diện trực quan, đẹp mắt.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#book-list" class="primary-btn">
+                        Explore books →
+                    </a>
+
+                    @if (isAdmin)
+                    {
+                        <a asp-area="Admin" asp-controller="Admin" asp-action="Add" class="admin-btn">
+                            + Add new book
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="#book-list" class="secondary-btn">
+                            View collection
+                        </a>
+                    }
+                </div>
+            </div>
+
+            <div class="hero-panel">
+                <div class="panel-content">
+                    <div class="panel-number">@totalBooks.ToString("00")</div>
+                    <div class="panel-text">
+                        Books are ready to explore. Hover each item to see smooth motion and modern product interaction.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-row">
+            <div class="stat-card">
+                <div class="stat-number">@totalBooks.ToString("00")</div>
+                <div class="stat-label">Available books</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">@categories.ToString("00")</div>
+                <div class="stat-label">Categories</div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-number">24</div>
+                <div class="stat-label">Hours online store</div>
+            </div>
+        </section>
+        <section class="filter-section">
+    <form method="get" action="@Url.Action("Index", "Product")#book-list" class="filter-box">
+        <div class="filter-group">
+            <label>Tìm kiếm</label>
+            <input type="text"
+                   name="searchString"
+                   value="@ViewBag.SearchString"
+                   placeholder="Nhập tên sách hoặc mô tả..."
+                   class="filter-input" />
+        </div>
+
+        <div class="filter-group">
+            <label>Danh mục</label>
+            <select name="categoryId" class="filter-input">
+                <option value="">All danh mục</option>
+
+                @if (ViewBag.Categories != null)
+                {
+                    foreach (var category in ViewBag.Categories)
+                    {
+                        if (ViewBag.CategoryId != null && ViewBag.CategoryId == category.Id)
+                        {
+                            <option value="@category.Id" selected>
+                                @category.Name
+                            </option>
+                        }
+                        else
+                        {
+                            <option value="@category.Id">
+                                @category.Name
+                            </option>
+                        }
+                    }
+                }
+            </select>
+        </div>
+
+        <div class="filter-group">
+            <label>Giá từ</label>
+            <input type="number"
+                   name="minPrice"
+                   value="@ViewBag.MinPrice"
+                   placeholder="0"
+                   class="filter-input" />
+        </div>
+
+        <div class="filter-group">
+            <label>Giá đến</label>
+            <input type="number"
+                   name="maxPrice"
+                   value="@ViewBag.MaxPrice"
+                   placeholder="1000000"
+                   class="filter-input" />
+        </div>
+
+        <div class="filter-actions">
+            <button type="submit" class="filter-btn">
+                Search
+            </button>
+
+            <a asp-controller="Product" asp-action="Index"  asp-fragment="book-list" class="reset-btn"> Reset </a>
+        </div>
+    </form>
+</section>
+        <section id="book-list">
+            <div class="section-heading">
+                <h2>
+                    Selected<br />
+                    Collection
+                </h2>
+
+                <p>
+                    Danh sách sản phẩm được trình bày theo dạng card lớn, có hiệu ứng hover, ảnh nổi bật,
+                    giá tiền và thao tác xem chi tiết.
+                </p>
+            </div>
+
+            @if (Model != null && Model.Any())
+            {
+                <div class="book-grid">
+                    @foreach (var item in Model)
+                    {
+                        var description = string.IsNullOrEmpty(item.Description)
+                            ? "Không có mô tả cho sản phẩm này."
+                            : item.Description;
+
+                        if (description.Length > 120)
+                        {
+                            description = description.Substring(0, 120) + "...";
+                        }
+
+                        <article class="book-card">
+                            <div class="book-img-wrap">
+                                <div class="category-pill">
+                                    @(item.Category != null ? item.Category.Name : "No Category")
+                                </div>
+
+                                @if (!string.IsNullOrEmpty(item.ImageUrl))
+                                {
+                                    <img src="@item.ImageUrl" alt="@item.Name" class="book-img" />
+                                }
+                                else
+                                {
+                                    <div class="no-book-img">
+                                        No image
+                                    </div>
+                                }
+                            </div>
+
+                            <div class="book-info">
+                                <h3 class="book-name">@item.Name</h3>
+
+                                <div class="book-desc">
+                                    @description
+                                </div>
+
+                                <div class="book-bottom">
+                                    <div class="price">
+                                        @String.Format("{0:N0}đ", item.Price)
+                                    </div>
+
+                                    <div class="action-links">
+                                        <a asp-action="Display"
+                                           asp-route-id="@item.Id"
+                                           class="mini-btn">
+                                            Details
+                                        </a>
+                                        <form asp-controller="Cart"
+                                              asp-action="AddToCart"
+                                              method="post"
+                                              class="d-inline">
+
+                                            @Html.AntiForgeryToken()
+
+                                            <input type="hidden" name="id" value="@item.Id" />
+                                            <input type="hidden" name="quantity" value="1" />
+
+                                            <button type="submit" class="mini-btn cart-btn">
+                                                Add Cart
+                                            </button>
+                                        </form>
+
+                                        @if (isAdmin)
+                                        {
+                                            <a asp-area="Admin"
+                                               asp-controller="Admin"
+                                               asp-action="Update"
+                                               asp-route-id="@item.Id"
+                                               class="mini-btn">
+                                                Edit
+                                            </a>
+
+                                            <a asp-area="Admin"
+                                               asp-controller="Admin"
+                                               asp-action="Delete"
+                                               asp-route-id="@item.Id"
+                                               class="mini-btn delete">
+                                                Delete
+                                            </a>
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="empty-area">
+                    <div class="empty-area">
+                        <h4>Không tìm thấy sách phù hợp.</h4>
+                        <p>Hãy thử thay đổi từ khóa, danh mục hoặc khoảng giá.</p>
+
+                        <div style="margin-top: 14px;">
+                            <a asp-controller="Product" asp-action="Index" class="primary-btn">
+                                Xóa bộ lọc
+                            </a>
+
+                            @if (isAdmin)
+                            {
+                                <a asp-area="Admin" asp-controller="Admin" asp-action="Add" class="admin-btn" style="margin-left: 10px;">
+                                    Add first book
+                                </a>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </section>
+
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>Literature</span>
+                <span>Technology</span>
+                <span>Knowledge</span>
+                <span>Creativity</span>
+                <span>Education</span>
+                <span>Literature</span>
+                <span>Technology</span>
+                <span>Knowledge</span>
+                <span>Creativity</span>
+                <span>Education</span>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    const cards = document.querySelectorAll('.book-card');
+
+    if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.18
+        });
+
+        cards.forEach(function (card) {
+            observer.observe(card);
+        });
+    } else {
+        cards.forEach(function (card) {
+            card.classList.add('show');
+        });
+    }
+</script>

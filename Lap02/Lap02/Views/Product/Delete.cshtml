@@ -1,0 +1,114 @@
+﻿@model Lap02.Models.Product
+
+@{
+    ViewData["Title"] = "Delete Product";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<style>
+
+</style>
+
+<div class="delete-page">
+    <div class="delete-container">
+
+        <div class="delete-header">
+            <div>
+                <h1 class="delete-title">Delete Product</h1>
+                <p class="delete-subtitle">Review product information before deleting it.</p>
+            </div>
+
+            <a asp-action="Index" class="back-link">
+                ← Back to List
+            </a>
+        </div>
+
+        <div class="warning-box">
+            Are you sure you want to delete this product? This action cannot be undone.
+        </div>
+
+        <div class="delete-card">
+            <div class="delete-layout">
+
+                <div class="image-box">
+                    @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                    {
+                        <img src="@Model.ImageUrl" alt="@Model.Name" class="product-image" />
+                    }
+                    else
+                    {
+                        <div class="no-image-box">
+                            No image
+                        </div>
+                    }
+                </div>
+
+                <div class="info-box">
+                    <h4 class="info-section-title">Product Information</h4>
+
+                    <div class="info-row">
+                        <div class="info-label">Product Name</div>
+                        <div class="product-name">
+                            @Html.DisplayFor(model => model.Name)
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Product ID</div>
+                        <div class="info-value">
+                            <span class="id-badge">
+                                #@Html.DisplayFor(model => model.Id)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Price</div>
+                        <div class="info-value">
+                            <span class="price-badge">
+                                @Html.DisplayFor(model => model.Price)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Category</div>
+                        <div class="info-value">
+                            <span class="category-badge">
+                                Category @Html.DisplayFor(model => model.CategoryId)
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="info-row">
+                        <div class="info-label">Description</div>
+                        <div class="description-box">
+                            @if (!string.IsNullOrEmpty(Model.Description))
+                            {
+                                @Html.DisplayFor(model => model.Description)
+                            }
+                            else
+                            {
+                                <span>No description</span>
+                            }
+                        </div>
+                    </div>
+
+                    <form asp-action="Delete" method="post">
+                        <input type="hidden" asp-for="Id" />
+
+                        <div class="button-group">
+                            <input type="submit" value="Delete Product" class="btn-delete" />
+
+                            <a asp-action="Index" class="btn-cancel">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,22 @@
+﻿using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
+
+namespace Lap02.Models
+{
+    public class Product
+    {
+        public int Id { get; set; }
+        [Required, StringLength(100)]
+        public string? Name { get; set; }
+
+        [Precision(10,2)]
+        [Range(0.01, 1000000.00)]
+        public decimal Price { get; set; }
+        public string? Description { get; set; }
+        public int CategoryId { get; set; }
+
+        public string? ImageUrl { get; set; } // Đường dẫn đến hình ảnh đại diện
+        public List<ProductImage>? Images { get; set; }
+        public Category? Category { get; set; }
+    }
+}

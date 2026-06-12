@@ -1,0 +1,74 @@
+﻿@model Lap02.Models.Product
+
+@{
+    ViewData["Title"] = "Xóa sản phẩm";
+}
+
+<div class="container mt-4">
+    <h2 class="text-danger">Xóa sản phẩm</h2>
+
+    <div class="alert alert-warning">
+        Bạn có chắc chắn muốn xóa sản phẩm này không?
+    </div>
+
+    <div class="card p-4">
+        <div class="row">
+            <div class="col-md-3">
+                @if (!string.IsNullOrEmpty(Model.ImageUrl))
+                {
+                    <img src="@Model.ImageUrl"
+                         alt="@Model.Name"
+                         class="img-fluid rounded"
+                         style="max-height: 250px; object-fit: cover;" />
+                }
+                else
+                {
+                    <div class="border p-4 text-center">
+                        Không có ảnh
+                    </div>
+                }
+            </div>
+
+            <div class="col-md-9">
+                <h4>@Model.Name</h4>
+
+                <p>
+                    <strong>Giá:</strong>
+                    @String.Format("{0:N0}đ", Model.Price)
+                </p>
+
+                <p>
+                    <strong>Danh mục:</strong>
+                    @(Model.Category != null ? Model.Category.Name : "Không có danh mục")
+                </p>
+
+                <p>
+                    <strong>Mô tả:</strong>
+                    <br />
+                    @Model.Description
+                </p>
+
+                <form asp-area="Admin"
+                      asp-controller="Admin"
+                      asp-action="Delete"
+                      method="post">
+
+                    @Html.AntiForgeryToken()
+
+                    <input type="hidden" asp-for="Id" />
+
+                    <button type="submit" class="btn btn-danger">
+                        Xác nhận xóa
+                    </button>
+
+                    <a asp-area="Admin"
+                       asp-controller="Admin"
+                       asp-action="Index"
+                       class="btn btn-secondary">
+                        Hủy
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
